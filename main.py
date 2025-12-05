@@ -24,7 +24,7 @@ def LLM(state: MessagesState) -> MessagesState:
 
     return {
         "messages": message,
-        "response": response
+        "response": response.content
     }
 
 def create_graph()->StateGraph:
@@ -49,5 +49,5 @@ if __name__ == "__main__":
 
     response = app.invoke({"messages": "What is the capital of France?"})
 
-    print(response['response'].content)
+    print(response['response'])
 
