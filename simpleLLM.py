@@ -1,4 +1,46 @@
-## Define libraries
+# 1. Define libraries
+
+
+# 2. Define input and output message types for for each node.
+
+
+
+# 3. Define LLM Node
+
+
+# 4. Create graph by connecting nodes
+
+
+
+# 5. Invoke LLM function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 
 from langgraph.graph import StateGraph, END
 from langchain_groq import ChatGroq
 import dotenv
@@ -8,13 +50,13 @@ warnings.filterwarnings("ignore")
 
 dotenv.load_dotenv()
 
-## Define input and output message types for each node.
+## Define input and output message types for for LLM function.
 class MessagesState(dict):
     messages: str
     response: str
 
 
-## Define LLM node
+## Define LLM Node
 def LLM(state: MessagesState) -> MessagesState:
     message = state["messages"]
 
@@ -27,6 +69,7 @@ def LLM(state: MessagesState) -> MessagesState:
         "response": response.content
     }
 
+## Connnect LLM function to messages
 def create_graph()->StateGraph:
     graph = StateGraph(MessagesState)
 
@@ -40,14 +83,15 @@ def create_graph()->StateGraph:
 
     return graph
 
+## 
 if __name__ == "__main__":
     g = create_graph()
     
     app = g.compile()
 
-    app.get_graph().draw_mermaid_png(output_file_path="graph.png")
+    app.get_graph().draw_mermaid_png(output_file_path="graphs/graph_simple.png")
 
-    response = app.invoke({"messages": "What is the capital of France?"})
+    response = app.invoke({"messages": "What is the weather in London?"})
 
     print(response['response'])
 
