@@ -3,6 +3,10 @@
 This repository contains **practical implementations of Agentic AI concepts**, demonstrated through simple and modular examples.
 It was created as a companion to a **national-level workshop on *Agentic AI and its Applications***.
 
+Presentation Link for the workshop - [Agentic-AI](https://docs.google.com/presentation/d/1E_Q99V6m2GZeOikQy8LN1Q1qa-0aX9sNujzb5hpOpBY/edit?usp=sharing)
+
+Connent with me on LinkedIn - [LinkedIn](https://www.linkedin.com/in/vishnu3101)
+
 The goal of this repo is to help learners understand **how agents are built in practice**, beyond theory and hype.
 
 ---
